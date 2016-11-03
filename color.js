@@ -29,12 +29,27 @@ Color.redIntensity = function(rgb){
 };
 
 //greenIntensity
-
+Color.greenIntensity = function(rgb){
+  let greenIntensity= rgb[1]/255*100;
+  greenIntensity=Math.Round(greenIntensity)
+  return greenIntensity;
+};
 
 //blueIntensity
-
+Color.blueIntensity= function(rgb){
+  let blueIntensity=rgb[2]/255*100;
+  blueIntensity=Math.Round(blueIntensity);
+  return blueIntensity;
+};
 
 //brightness
-
+Color.brightness=function(){
+  var bright;
+  bright=(blueIntensity+redIntensity+greenIntensity)/3;
+  return bright;
+};
 
 //complement
+Color.complement=function(){
+  
+}
