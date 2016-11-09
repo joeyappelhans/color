@@ -15,41 +15,45 @@ Color.isColor = function(rgb){
   let blueworks = (rgb[2]>=0) && (rgb[2]<= 255);
 
   if(redworks && greenworks && blueworks){
-    return true;
+    return true
   }
   else{
-    return false;
+    return false
   }
 };
 
 Color.redIntensity = function(rgb){
   let redIntensity= rgb[0]/255*100;
   redIntensity=Math.Round(redIntensity)
-  return redIntensity;
+  return redIntensity
 };
 
 //greenIntensity
 Color.greenIntensity = function(rgb){
   let greenIntensity= rgb[1]/255*100;
   greenIntensity=Math.Round(greenIntensity)
-  return greenIntensity;
+  return greenIntensity
 };
 
 //blueIntensity
 Color.blueIntensity= function(rgb){
   let blueIntensity=rgb[2]/255*100;
   blueIntensity=Math.Round(blueIntensity);
-  return blueIntensity;
+  return blueIntensity
 };
 
 //brightness
 Color.brightness=function(){
   var bright;
-  bright=(blueIntensity+redIntensity+greenIntensity)/3;
-  return bright;
+  bright=(Color.blueIntensity(rgb)+Color.redIntensity(rgb)+Color.greenIntensity(rgb))/3;
+  return bright
 };
 
 //complement
 Color.complement=function(){
-  
-}
+  var complement=rgb;
+  rgb[0]=255-rgb[0];
+  rgb[1]=255-rgb[1];
+  rgb[2]=255-rgb[2];
+  return complement
+};
